@@ -9,3 +9,111 @@
 
     --radius-bento: 1.5rem;
 }
+
+/* --- Conector Secuencial para el Grid de Fases (Nivel Pro) --- */
+
+/* 1. Definimos el contenedor relativo para que los conectores se posicionen respecto a él */
+/* --- Conector Inteligente (Responsive Pipeline) --- */
+
+#fases-grid-container {
+    position: relative;
+}
+
+/* Línea Conectora Base */
+#fases-grid-container::before {
+    content: '';
+    position: absolute;
+    background-image: linear-gradient(to bottom, rgba(0, 90, 158, 0.1) 40%, transparent 0%);
+    background-size: 1px 8px;
+    background-repeat: repeat-y;
+    z-index: 0;
+
+    /* MÓVIL: Línea Vertical a la izquierda */
+    top: 0;
+    bottom: 0;
+    left: 24px;
+    /* Alineado con el centro del icono en móvil */
+    width: 2px;
+}
+
+/* Animación de Progreso Activa */
+#fases-grid-container::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(to bottom, #005a9e, #90c2e7);
+    box-shadow: 0 0 10px rgba(144, 194, 231, 0.4);
+    z-index: 1;
+    left: 24px;
+    width: 2px;
+    animation: phase-progress-vertical 6s infinite ease-in-out;
+}
+
+/* DESKTOP: Switch a modo Horizontal (A partir de LG) */
+@media (min-width: 1024px) {
+    #fases-grid-container::before {
+        background-image: linear-gradient(to right, rgba(0, 90, 158, 0.1) 40%, transparent 0%);
+        background-size: 8px 1px;
+        background-repeat: repeat-x;
+        top: 56px;
+        bottom: auto;
+        left: 10%;
+        right: 10%;
+        width: auto;
+        height: 2px;
+    }
+
+    #fases-grid-container::after {
+        background: linear-gradient(90deg, #005a9e, #90c2e7);
+        top: 56px;
+        left: 5%;
+        height: 2px;
+        width: 0;
+        animation: phase-progress-horizontal 6s infinite ease-in-out;
+    }
+}
+
+/* Animaciones Técnicas */
+@keyframes phase-progress-vertical {
+    0% {
+        height: 0%;
+        top: 0;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        height: 100%;
+        top: 0;
+        opacity: 1;
+    }
+
+    100% {
+        height: 100%;
+        top: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes phase-progress-horizontal {
+    0% {
+        width: 0%;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        width: 80%;
+        opacity: 1;
+    }
+
+    100% {
+        width: 80%;
+        opacity: 0;
+    }
+}

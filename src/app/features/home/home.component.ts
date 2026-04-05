@@ -4,12 +4,13 @@ import { Title } from '@angular/platform-browser';
 import { Meta } from '@angular/platform-browser';
 import { ProjectsComponent } from '../projects/projects.component';
 import { ContactComponent } from '../contact/contact.component';
+import { ProcessStepsComponent } from '../../shared/procces-steps/process-steps.component';
 
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrl: './home.component.css',
-    imports: [CommonModule, ProjectsComponent, ContactComponent]
+    imports: [CommonModule, ProjectsComponent, ContactComponent, ProcessStepsComponent]
 })
 export class HomeComponent implements OnInit {
     private readonly title = inject(Title);
