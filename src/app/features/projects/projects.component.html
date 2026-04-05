@@ -1,0 +1,71 @@
+<section id="projects" class="py-24 px-6 md:px-12 bg-white">
+    <div class="max-w-screen-2xl mx-auto flex flex-col gap-16">
+
+        <div class="flex flex-col gap-3 max-w-2xl" glass-in>
+            <span class="text-secondary font-bold text-sm tracking-widest uppercase">
+                Nuestro Portfolio
+            </span>
+            <h2 class="text-4xl md:text-5xl font-bold text-text-base leading-tight">
+                Casos de Estudio que <span
+                    class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Validan</span>
+                nuestra Ingeniería
+            </h2>
+        </div>
+
+        @for (project of projects(); track project.title) {
+        <div class="glass-effect p-10 rounded-bento border border-text-base/10 group flex flex-col gap-8 transition-all hover:border-primary/30 hover:-translate-y-1"
+            [ngClass]="project.featured ? 'md:col-span-2' : '' ">
+
+            <div class="flex items-center justify-between gap-4">
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center border border-secondary/20 text-secondary shadow-inner">
+                        <!-- <lucide-icon [name]="project.icon" class="w-6 h-6" strokeWidth="1.5"></lucide-icon> -->
+                    </div>
+                    <h3 class="text-3xl font-bold text-text-base tracking-tighter leading-tight">
+                        {{ project.title }}
+                    </h3>
+                </div>
+
+                <div class="hidden md:flex flex-wrap gap-2 justify-end max-w-xs">
+                    @for (tag of project.tags; track tag) {
+                    <span
+                        class="text-xs font-medium text-text-base/70 bg-surface-base/50 px-3 py-1.5 rounded-full border border-text-base/5">
+                        {{ tag }}
+                    </span>
+                    }
+                </div>
+            </div>
+
+            <p class="text-text-base/80 leading-relaxed text-sm flex-grow max-w-2xl">
+                {{ project.description }}
+            </p>
+
+            <div class="border-t border-text-base/10 pt-6 flex items-center justify-between gap-4">
+                <a [routerLink]="project.route"
+                    class="text-sm font-bold text-primary group-hover:text-primary/80 transition-colors no-underline flex items-center gap-2">
+                    Ver Caso de Estudio
+                    <!-- <lucide-icon name="arrow-right"
+                            class="w-4 h-4 group-hover:translate-x-1.5 transition-transform"></lucide-icon> -->
+                </a>
+
+                @if (project.externalUrl) {
+                <a [href]="project.externalUrl" target="_blank" rel="noopener noreferrer"
+                    class="text-xs font-medium text-text-base/60 hover:text-primary transition-colors no-underline flex items-center gap-1.5 border border-text-base/10 px-4 py-2 rounded-lg bg-surface-base/30">
+                    Visitar Sitio
+                    <!-- <lucide-icon name="external-link" class="w-3.5 h-3.5"></lucide-icon> -->
+                </a>
+                }
+            </div>
+        </div>
+        }
+
+        <div class="flex justify-center pt-10">
+            <a routerLink="/projects"
+                class="bg-surface-card border border-text-base/10 text-text-base/80 px-10 py-4 rounded-xl font-bold text-sm hover:bg-secondary/10 hover:border-secondary/30 transition-all shadow-lg shadow-text-base/5 no-underline flex items-center gap-2.5">
+                Explorar Portfolio Completo
+                <!-- <lucide-icon name="layout-grid" class="w-4.5 h-4.5 text-secondary"></lucide-icon> -->
+            </a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,72 @@
+<section class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between pt-8 md:px-6">
+    <div
+        class="flex-1 flex flex-col items-start justify-center max-w-xl animate-fade-in-left glassmorphism rounded-t-2xl p-10 shadow-lg transition-all duration-700 bg-secondary">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-text-base mb-4 leading-tight animate-fade-in-up">
+            Ingeniería de Sistemas aplicada a tu negocio digital
+        </h1>
+        <h2 class="text-xl md:text-2xl font-semibold text-primary mb-6 animate-fade-in-up delay-100">
+            Desarrollo web profesional, optimizado y escalable con un stack moderno y eficiente.
+        </h2>
+        <div class="flex gap-4 mb-8 animate-fade-in-up delay-200">
+            <a class="bg-primary text-white px-6 py-3 rounded-xl font-bold shadow-md hover:bg-primary/90 transition-colors"
+                href="#contact">
+                Solicita tu proyecto
+            </a>
+            <a class="border-2 border-secondary bg-white text-secondary px-6 py-3 rounded-xl font-bold hover:bg-surface-base transition-colors"
+                href="#projects">
+                Ver proyectos
+            </a>
+        </div>
+    </div>
+    <div class="flex-1 flex justify-center items-center animate-fade-in-right max-h-[95vh]">
+        <img ngOptimizedImage src="/hero-systems-engineering.png" width="900" height="1800"
+            alt="Ingeniero de sistemas desarrollando soluciones digitales" priority
+            class="shadow-xl md:rounded-r-2xl object-cover glassmorphism" />
+    </div>
+</section>
+
+<section id="services" class="py-20 bg-gradient-to-b from-primary/10 to-transparent px-6 animate-fade-in-up delay-300">
+    <div class="max-w-screen-2xl mx-auto flex flex-col pt-10 gap-16 ">
+        <div class="flex flex-col gap-3 max-w-2xl" glass-in>
+            <span class="text-primary font-bold text-sm tracking-widest uppercase">
+                Nuestra Expertise Técnica
+            </span>
+            <h2 class="text-4xl md:text-5xl font-bold text-text-base leading-tight">
+                Llevamos tu Arquitectura Digital al <span
+                    class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Siguiente
+                    Nivel</span>
+            </h2>
+        </div>
+
+        <div class="bento-grid flex lg:flex-row flex-col gap-8">
+            @for (service of services(); track service.title) {
+            <div
+                class="glass-effect p-10 rounded-bento border border-primary/10 group flex flex-col gap-8 transition-all hover:border-primary/30 hover:-translate-y-1">
+                <div class="flex flex-col gap-5">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20 text-primary shadow-inner">
+                        <!-- <lucide-icon [name]="service.icon" class="w-7 h-7" strokeWidth="1.5"></lucide-icon> -->
+                    </div>
+
+                    <h3 class="text-2xl font-semibold text-text-base tracking-tight leading-tight">
+                        {{ service.title }}
+                    </h3>
+                </div>
+
+                <p class="text-text-base/80 leading-relaxed text-sm flex-grow">
+                    {{ service.description }}
+                </p>
+
+                <div class="border-t border-text-base/10 pt-5 flex justify-end">
+                    <!-- <lucide-icon name="arrow-right"
+                        class="w-5 h-5 text-primary group-hover:translate-x-1.5 transition-transform"></lucide-icon> -->
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<app-projects></app-projects>
+
+<app-contact></app-contact>

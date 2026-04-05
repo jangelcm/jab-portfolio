@@ -1,0 +1,76 @@
+<footer class="border-t border-text-base/10 bg-primary/20 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 py-16 flex flex-col gap-12">
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-sm text-text-base/80">
+
+            <div class="md:col-span-1 flex flex-col gap-5">
+                <div class="flex items-center gap-3 select-none">
+                    <div
+                        class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 border border-primary/10">
+                        <span class="text-white font-bold text-lg">J</span>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight text-primary">
+                        JAB <span class="text-text-base/70 font-medium">Digital Studio</span>
+                    </span>
+                </div>
+                <p class="text-xs leading-relaxed max-w-xs">
+                    Ingeniería de Sistemas especializada en arquitecturas web de alto rendimiento con Angular 19,
+                    Signals y SEO técnico.
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-4 md:col-start-3">
+                <h4 class="font-bold text-text-base tracking-tight mb-2">Navegación</h4>
+                <a routerLink="/"
+                    class="no-underline text-text-base/70 hover:text-primary transition-colors cursor-pointer">Inicio</a>
+                <a routerLink="/projects"
+                    class="no-underline text-text-base/70 hover:text-primary transition-colors cursor-pointer">Proyectos</a>
+                <a [routerLink]="['/']" fragment="contact"
+                    class="no-underline text-text-base/70 hover:text-primary transition-colors cursor-pointer">Contacto</a>
+            </div>
+
+            <div class="flex flex-col gap-4 md:col-start-4">
+                <h4 class="font-bold text-text-base tracking-tight mb-2">Tech Stack</h4>
+                <div class="flex items-center gap-2">
+                    <lucide-icon [name]="iconZap" class="w-4.5 h-4.5 text-secondary"></lucide-icon>
+                    <span class="text-xs">Angular 19, Zoneless</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <lucide-icon [name]="iconZap" class="w-4.5 h-4.5 text-secondary"></lucide-icon>
+                    <span class="text-xs">Lucide Icons, Tailwind v4</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <lucide-icon [name]="iconZap" class="w-4.5 h-4.5 text-secondary"></lucide-icon>
+                    <span class="text-xs">Google Lighthouse LCP > 95</span>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="border-t border-text-base/10 pt-10 flex flex-col-reverse md:flex-row items-center justify-between gap-6 text-xs text-text-base/60">
+
+            <div class="flex flex-col md:flex-row items-center gap-x-6 gap-y-2 text-center md:text-left">
+                <span>© {{ currentYear() }} JAB Digital Studio. Todos los derechos reservados.</span>
+                <div class="flex gap-4">
+                    <a routerLink="/legal"
+                        class="no-underline text-text-base/60 hover:text-primary transition-colors cursor-pointer">Aviso
+                        Legal</a>
+                    <a routerLink="/privacy"
+                        class="no-underline text-text-base/60 hover:text-primary transition-colors cursor-pointer">Política
+                        de Privacidad</a>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-5">
+                <a href="https://www.linkedin.com/in/jangelcmdev/" target="_blank" rel="noopener noreferrer"
+                    class="w-9 h-9 rounded-lg bg-surface-base flex items-center justify-center border border-text-base/10 text-secondary hover:bg-secondary/10 hover:border-secondary/20 transition-colors">
+                    <lucide-icon [name]="iconLinkedin" class="w-4.5 h-4.5" strokeWidth="1.5"></lucide-icon>
+                </a>
+                <a href="https://github.com/jangelcm" target="_blank" rel="noopener noreferrer"
+                    class="w-9 h-9 rounded-lg bg-surface-base flex items-center justify-center border border-text-base/10 text-text-base/70 hover:bg-text-base/5 hover:border-text-base/20 transition-colors">
+                    <lucide-icon [name]="iconGithub" class="w-4.5 h-4.5" strokeWidth="1.5"></lucide-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
