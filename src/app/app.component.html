@@ -2,14 +2,17 @@
     <div
         class="glass-effect flex items-center justify-between px-6 py-4 lg:rounded-2xl border border-white/20 shadow-2xl">
 
-        <div class="flex items-center gap-2 select-none">
-            <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span class="text-white font-bold text-sm">J</span>
+        <div class="flex items-center group select-none">
+            <div class="
+                transition-all duration-500 ease-out cursor-pointer">
+
+                <img ngOptimizedImage src="/logo.png" width="100" height="100" alt="Logo JAB Digital Studio"
+                    class="group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500" />
+
+                <div
+                    class="absolute inset-0 rounded-xl bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
             </div>
-            <span
-                class="font-bold text-xl tracking-tight bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                JAB Digital Studio
-            </span>
         </div>
 
         <ul class="hidden md:flex items-center gap-8 text-sm font-semibold text-text-base/80">
